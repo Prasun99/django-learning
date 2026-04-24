@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Template</title>
+</head>
+<body>
+
+    <h1>Basic Info</h1>
+    <p>Name: {{ name }}</p>
+    <p>Age: {{ age }}</p>
+
+    <hr>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for s in skill %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>User Object</h2>
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+
+    <hr>
+
+    <h2>Blog Info</h2>
+    <p>Title: {{ blog.title }}</p>
+
+    <!-- This will render HTML as plain text -->
+    <p>Content (escaped): {{ blog.content }}</p>
+
+    <!-- This will render actual bold text -->
+    <p>Content (safe): {{ blog.content|safe }}</p>
+
+    <p>Created At: {{ blog.created_at }}</p>
+
+    <hr>
+
+    <h2>Condition Check</h2>
+    {% if empty_value %}
+        <p>Value exists: {{ empty_value }}</p>
+    {% else %}
+        <p>No value found</p>
+    {% endif %}
+
+</body>
+</html>
