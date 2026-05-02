@@ -1,9 +1,9 @@
 from django import forms
-from . models import student
+from . models import Student
 
 class studentForm(forms.ModelForm):
   class Meta:
-    model=student
+    model=Student
     fields =["name","age","email"]
   def clean_age(self):
     age = self.cleaned_data.get('age')

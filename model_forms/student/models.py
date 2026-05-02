@@ -1,6 +1,6 @@
 from django.db import models
 
-class student(models.Model):
+class Student(models.Model):
   name = models.CharField()
   age = models.IntegerField()
   email = models.EmailField(unique=True)
